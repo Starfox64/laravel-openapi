@@ -9,6 +9,7 @@ use GoldSpecDigital\ObjectOrientedOAS\Objects\SecurityRequirement;
 use GoldSpecDigital\ObjectOrientedOAS\Objects\SecurityScheme;
 use GoldSpecDigital\ObjectOrientedOAS\OpenApi;
 use phpDocumentor\Reflection\DocBlock;
+use Vyuldashev\LaravelOpenApi\Attributes\Operation as AttributesOperation;
 use Vyuldashev\LaravelOpenApi\Attributes\SecurityRequirement as AttributesSecurityRequirement;
 use Vyuldashev\LaravelOpenApi\Builders\Paths\Operation\SecurityBuilder;
 use Vyuldashev\LaravelOpenApi\Builders\Paths\OperationsBuilder;
@@ -161,6 +162,7 @@ class SecurityBuilderTest extends TestCase
         $routeInfo->name = 'test route';
         $routeInfo->actionDocBlock = new DocBlock('Test');
         $routeInfo->actionAttributes = collect([
+            new AttributesOperation(),
             new AttributesSecurityRequirement(null),
         ]);
 
