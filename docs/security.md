@@ -31,8 +31,8 @@ class UserController extends Controller
      *
      * Creates new user or returns already existing user by email.
      */
-     #[OpenApi\Operation()]
-     #[OpenApi\SecurityRequirement('BearerTokenSecurityScheme')]
+    #[OpenApi\Operation()]
+    #[OpenApi\SecurityRequirement('BearerTokenSecurityScheme')]
     public function store(Request $request)
     {
         //
@@ -53,10 +53,10 @@ class UserController extends Controller
      *
      * Creates new user or returns already existing user by email.
      */
-     #[OpenApi\Operation()]
-     #[OpenApi\SecurityRequirement('OAuth2SecurityScheme', ['user_create', 'user_admin'])] // AND
-     // OR
-     #[OpenApi\SecurityRequirement('OAuth2SecurityScheme', ['superadmin'])]
+    #[OpenApi\Operation()]
+    #[OpenApi\SecurityRequirement('OAuth2SecurityScheme', ['user_create', 'user_admin'])] // AND
+    // OR
+    #[OpenApi\SecurityRequirement('OAuth2SecurityScheme', ['superadmin'])]
     public function store(Request $request)
     {
         //
